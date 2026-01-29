@@ -232,565 +232,301 @@ const gameData = {
     
     // 阵容数据
     lineups: [
-        {
-            id: 1,
-            name: '比尔吉沃特女枪',
-            tier: 'S',
-            heroes: [55, 21, 48, 47, 23, 56],
-            mainCarry: 55,
-            equipment: {
-                main: [11, 12, 14],
-                sub: [35, 34, 37]
+    {
+        id: 1,
+        name: '比尔吉沃特女枪',
+        tier: 'S',
+        heroes: [55, 21, 48, 47, 23, 56],
+        mainCarry: 55,
+        equipment: {
+            main: [11, 12, 14],
+            sub: [35, 34, 37]
+        },
+        traits: ['6比尔吉沃特', '4枪手', '2约德尔人'],
+        description: '16.3b版本T0阵容，女枪伤害大幅提升58%',
+        winRate: '32%+',
+        stages: {
+            early: {
+                level: '2-1至3-2',
+                economy: '连胜连败均可，保证血量健康',
+                heroes: ['崔斯特', '格雷福斯', '普朗克'],
+                equipment: '优先合成女枪装备：无尽、巨杀、饮血',
+                tips: '用比尔吉沃特2费卡过渡，女枪16.3b大幅加强'
             },
-            traits: ['6比尔吉沃特', '4枪手', '2约德尔人'],
-            description: '16.3b版本T0阵容，女枪伤害大幅提升58%',
-            winRate: '32%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '连胜连败均可',
-                    heroes: ['金克丝', '瑟庄妮', '布里茨'],
-                    equipment: '优先合成金克丝装备：羊刀、轻语、巨杀',
-                    tips: '金克丝技能伤害被削弱（65/100/155⇒60/80/145）'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '3-2拉6人口，4-1拉7级',
-                    heroes: ['找两星金克丝、布隆'],
-                    equipment: '金克丝：羊刀+轻语+巨杀',
-                    tips: '发条护盾大幅削弱（80/120/200/280⇒60/90/130/200）'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '5-1拉8人口',
-                    heroes: ['补齐羁绊'],
-                    equipment: '前排肉装',
-                    tips: '金克丝已从T0跌落至B级，不推荐'
-                }
+            mid: {
+                level: '3-2至4-7',
+                economy: '3-2拉6人口，4-1拉7级',
+                heroes: ['找两星女枪、诺提勒斯'],
+                equipment: '女枪：无尽+巨杀+饮血/轻语',
+                tips: '女枪主要技能伤害从145/220提升至230/345'
+            },
+            late: {
+                level: '5-1至6-1',
+                economy: '5-1拉8人口，补齐6比尔吉沃特',
+                heroes: ['菲兹、塔姆等五费卡'],
+                equipment: '前排：日炎、反甲、龙牙',
+                tips: '比尔吉沃特虽被削弱但仍提供15%免费双攻'
             }
         }
-                    level: '2-1至3-2',
-                    economy: '连胜连败均可，保证血量健康',
-                    heroes: ['崔斯特', '格雷福斯', '普朗克'],
-                    equipment: '优先合成女枪装备：无尽、巨杀、饮血',
-                    tips: '用比尔吉沃特2费卡过渡，女枪16.3b大幅加强'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '3-2拉6人口，4-1拉7级',
-                    heroes: ['找两星女枪、诺提勒斯'],
-                    equipment: '女枪：无尽+巨杀+饮血/轻语',
-                    tips: '女枪主要技能伤害从145/220提升至230/345'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '5-1拉8人口，补齐6比尔吉沃特',
-                    heroes: ['菲兹、塔姆等五费卡'],
-                    equipment: '前排：日炎、反甲、龙牙',
-                    tips: '比尔吉沃特虽被削弱但仍提供15%免费双攻'
-                }
-            }
+    },
+    {
+        id: 2,
+        name: '暗裔剑魔',
+        tier: 'S',
+        heroes: [93, 35, 52, 61],
+        mainCarry: 93,
+        equipment: {
+            main: [86, 11, 14],
+            sub: [35, 34, 40]
         },
-        {
-            id: 2,
-            name: '暗裔剑魔',
-            tier: 'S',
-            heroes: [93, 35, 52, 61],
-            mainCarry: 93,
-            equipment: {
-                main: [86, 11, 14],
-                sub: [35, 34, 40]
+        traits: ['3暗裔', '4征服者', '2诺克萨斯'],
+        description: '16.3b版本T0阵容，暗裔羁绊伤害提升233%',
+        winRate: '31%+',
+        stages: {
+            early: {
+                level: '2-1至3-2',
+                economy: '连胜连败均可，保证血量',
+                heroes: ['德莱厄斯', '贝蕾亚'],
+                equipment: '优先合成暗裔镰刀（必备）',
+                tips: '用征服者/诺克萨斯棋子过渡'
             },
-            traits: ['3暗裔', '4征服者', '2诺克萨斯'],
-            description: '16.3b版本T0阵容，暗裔羁绊伤害提升233%',
-            winRate: '31%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '连胜连败均可，保证血量',
-                    heroes: ['德莱厄斯', '贝蕾亚'],
-                    equipment: '优先合成暗裔镰刀（必备）',
-                    tips: '用征服者/诺克萨斯棋子过渡'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '7级找剑魔，优先合成暗裔镰刀',
-                    heroes: ['剑魔、德莱厄斯、安倍萨'],
-                    equipment: '剑魔：暗裔镰刀+无尽+饮血/血手',
-                    tips: '3暗裔伤害从100提升至333，提升巨大'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '8人口补齐3暗裔羁绊',
-                    heroes: ['雷克顿等高费卡'],
-                    equipment: '前排：日炎、反甲、狂徒',
-                    tips: '剑魔生命值提升至1000，法力值降低至0/20'
-                }
-            }
-        },
-        {
-            id: 3,
-            name: '虚空卡莎',
-            tier: 'A',
-            heroes: [59, 44, 24, 12, 71, 72, 3],
-            mainCarry: 59,
-            equipment: {
-                main: [18, 11, 12],
-                sub: [34, 37, 36]
+            mid: {
+                level: '3-2至4-7',
+                economy: '7级找剑魔，优先合成暗裔镰刀',
+                heroes: ['剑魔、德莱厄斯、安倍萨'],
+                equipment: '剑魔：暗裔镰刀+无尽+饮血/血手',
+                tips: '3暗裔伤害从100提升至333，提升巨大'
             },
-            traits: ['4虚空', '4主宰', '3祖安'],
-            description: '16.3版本7级即可解锁，2虚空必给进攻型突变',
-            winRate: '29%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '正常过渡，连胜连败均可',
-                    heroes: ['蚂蚱、科加斯、雷克赛'],
-                    equipment: '优先合成卡莎装备：羊刀、无尽、巨杀',
-                    tips: '2虚空必给进攻型突变，前期战力更强'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '7级即可解锁卡莎（16.3版本优化）',
-                    heroes: ['凑齐虚空+主宰羁绊'],
-                    equipment: '卡莎：羊刀、无尽、巨杀',
-                    tips: '7级解锁提前发力，节奏更好'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '8人口成型，9人口补吉格斯',
-                    heroes: ['4虚空4主宰3祖安阵型'],
-                    equipment: '前排：反甲、龙牙、石像鬼',
-                    tips: '虚空突变优化，主宰纹章虽被削弱但仍可用'
-                }
-            }
-        },
-        {
-            id: 4,
-            name: '暗影岛滑板鞋',
-            tier: 'A',
-            heroes: [58, 79, 87, 80, 53],
-            mainCarry: 58,
-            equipment: {
-                main: [18, 11, 12],
-                sub: [30, 26, 31]
-            },
-            traits: ['5暗影岛', '3枪手', '2神谕者'],
-            description: '16.3版本BUG修复，锤石加强，千珏机制改动',
-            winRate: '28%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '连胜连败均可，保证血量',
-                    heroes: ['佛耶戈、约里克'],
-                    equipment: '优先合成滑板鞋装备：羊刀、无尽',
-                    tips: '用暗影岛棋子过渡'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '7级找两星滑板鞋和锤石',
-                    heroes: ['滑板鞋、锤石、卑尔维斯'],
-                    equipment: '锤石：青龙刀、珠光护手、大天使',
-                    tips: '滑板鞋技能后摇BUG已修复，输出更流畅'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '8人口补充千珏开启闭环',
-                    heroes: ['千珏、费德提克'],
-                    equipment: '前排：日炎、反甲、龙牙',
-                    tips: '锤石被动吸血提升至75%，千珏改为提供护盾'
-                }
-            }
-        },
-        {
-            id: 5,
-            name: '皮尔特沃夫梅尔',
-            tier: 'A',
-            heroes: [86, 17, 64, 30, 8, 81],
-            mainCarry: 86,
-            equipment: {
-                main: [25, 26, 30],
-                sub: [35, 34, 40]
-            },
-            traits: ['6皮尔特沃夫', '4法师', '2斗士'],
-            description: '16.3b版本梅尔大幅加强，皮尔特沃夫羁绊优化',
-            winRate: '27%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '连胜连败均可',
-                    heroes: ['奥莉安娜', '凯特琳'],
-                    equipment: '优先合成法术装备',
-                    tips: '用皮尔特沃夫2费卡过渡'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '7级找发条、萨勒芬妮',
-                    heroes: ['发条、萨勒芬妮、蔚'],
-                    equipment: '法师装备：帽子、珠光、青龙',
-                    tips: '发条解锁条件降低，更容易获得'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '8人口找梅尔，补齐6皮尔特沃夫',
-                    heroes: ['梅尔、海克斯霸龙'],
-                    equipment: '梅尔：帽子、珠光、青龙/大天使',
-                    tips: '梅尔飞弹伤害从40/60/90提升至65/100/150'
-                }
-            }
-        },
-        {
-            id: 6,
-            name: '以绪塔尔奇亚娜',
-            tier: 'A',
-            heroes: [5, 18, 46, 26, 65, 63],
-            mainCarry: 5,
-            equipment: {
-                main: [11, 12, 15],
-                sub: [30, 31, 26]
-            },
-            traits: ['5以绪塔尔', '2裁决战士', '2神谕者'],
-            description: '16.3版本以绪塔尔探险优化，奇亚娜太阳碎片获取提升',
-            winRate: '26%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '完成以绪塔尔小任务，积累太阳碎片',
-                    heroes: ['奇亚娜', '巴德', '妮蔻'],
-                    equipment: '优先合成奇亚娜装备：无尽、巨杀、轻语',
-                    tips: '奇亚娜太阳碎片获取大幅提升（20/30/40⇒30/50/80）'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '7级找两星奇亚娜和巴德',
-                    heroes: ['奇亚娜、巴德、米利欧'],
-                    equipment: '巴德：青龙刀、大天使、珠光',
-                    tips: '以绪塔尔探险难度降低，更容易完成'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '8人口成型，兑换以绪塔尔奖励',
-                    heroes: ['斯卡纳、奈德丽等高费卡'],
-                    equipment: '前排：日炎、反甲、狂徒',
-                    tips: '以绪塔尔奖励优化，更容易获得英雄复制器'
-                }
-            }
-        },
-        {
-            id: 7,
-            name: '巨神峰龙王（已削弱）',
-            tier: 'B',
-            heroes: [22, 51, 42, 75, 68, 54, 78, 80, 94],
-            mainCarry: 94,
-            equipment: {
-                main: [20, 26, 30],
-                sub: [35, 34, 37]
-            },
-            traits: ['6巨神峰', '2神盾使'],
-            description: '16.3b版本大幅削弱，不再推荐',
-            winRate: '22%',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '经济类强化开局',
-                    heroes: ['佐伊', '厄斐琉斯', '蕾欧娜'],
-                    equipment: '优先合成龙王装备：纳什、珠光、青龙',
-                    tips: '龙王法力值大砍（25/75⇒0/85），起手慢'
-                },
-                mid: {
-                    level: '3-5至4-7',
-                    economy: '3-5拉7级，找宝石解锁皎月',
-                    heroes: ['两星蕾欧娜解锁皎月'],
-                    equipment: '龙王解锁后拆装备',
-                    tips: '流星伤害腰斩（1000/1500⇒500/750）'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '5-1拉8级',
-                    heroes: ['补齐巨神峰羁绊'],
-                    equipment: '前排肉装',
-                    tips: '龙王已从T0跌落至B级，不推荐'
-                }
-            }
-        },
-        {
-            id: 8,
-            name: '闭环金克丝（已削弱）',
-            tier: 'B',
-            heroes: [38, 49, 54, 68, 16, 17],
-            mainCarry: 38,
-            equipment: {
-                main: [18, 15, 12],
-                sub: [35, 34, 37]
-            },
-            traits: ['4护卫', '4枪手'],
-            description: '16.3b版本削弱，竞争力下降',
-            winRate: '24%',
-                    economy: '8人口补齐7诺克萨斯',
-                    heroes: ['梅尔、千珏、安倍萨、稻草人'],
-                    equipment: '斯维因：狂徒、龙牙、反甲/石像鬼',
-                    tips: '7诺克萨斯召唤厄塔汗，强度随星级提升'
-                }
-            }
-        },
-        {
-            id: 7,
-            name: '闭环芸阿娜',
-            tier: 'A',
-            heroes: [67, 49, 68, 39, 16, 96, 62, 74],
-            mainCarry: 74,
-            equipment: {
-                main: [25, 24, 12],
-                sub: [34, 39, 33]
-            },
-            traits: ['3弗雷尔卓德', '3艾欧尼亚', '2斗士'],
-            description: '芸阿娜主C，配合瑞兹闭环',
-            winRate: '25%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '连胜连败均可',
-                    heroes: ['艾希、瑟庄妮等弗雷尔卓德'],
-                    equipment: '优先合成芸阿娜装备：法爆、帽子',
-                    tips: '利用弗雷尔卓德冰霜之塔过渡'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '7级D牌找两星芸阿娜',
-                    heroes: ['芸阿娜、孙悟空、塔里克'],
-                    equipment: '芸阿娜：法爆、帽子、正义/破甲',
-                    tips: '3弗雷尔卓德召唤冰封之塔'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '8人口补瑞兹开闭环',
-                    heroes: ['瑞兹、丽桑卓等高费卡'],
-                    equipment: '孙悟空：日炎、狂徒、反甲/石像鬼',
-                    tips: '瑞兹需要激活4个城邦羁绊解锁'
-                }
-            }
-        },
-        {
-            id: 8,
-            name: '斗士巴德',
-            tier: 'A',
-            heroes: [18, 27, 22, 6, 67, 26],
-            mainCarry: 18,
-            equipment: {
-                main: [29, 30, 25],
-                sub: [34, 39, 40]
-            },
-            traits: ['6斗士', '2以绪塔尔', '2神谕者'],
-            description: '6级猛D三星，塞恩叠血量',
-            winRate: '24%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '开局有塞恩+日炎可直接玩',
-                    heroes: ['塞恩、巴德、慎'],
-                    equipment: '塞恩必备日炎，巴德合成法术装',
-                    tips: '塞恩的日炎是必配的'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '6级抽塞恩、巴德、厄斐琉斯追3星',
-                    heroes: ['塞恩、巴德、厄斐琉斯三星'],
-                    equipment: '巴德：青龙刀、大天使、法爆',
-                    tips: '刷新类任务变得更容易，有D牌强化直接玩'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '8人口开6斗士',
-                    heroes: ['孙悟空、妮蔻等斗士'],
-                    equipment: '塞恩叠血量+血量装备',
-                    tips: '有举重比赛，3费以下斗士全追3星'
-                }
-            }
-        },
-        {
-            id: 9,
-            name: '永恩亚索',
-            tier: 'A',
-            heroes: [31, 73, 34, 26, 39, 67],
-            mainCarry: 31,
-            equipment: {
-                main: [10, 13, 17],
-                sub: [25, 24, 26]
-            },
-            traits: ['3艾欧尼亚', '2迅击战士', '2法师'],
-            description: '艾欧尼亚超凡路线，亚索主C',
-            winRate: '23%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '看艾欧效果，超凡最适配',
-                    heroes: ['亚索、慎、烬'],
-                    equipment: '亚索必备无尽，装备对可直接冲',
-                    tips: '开局要看艾欧效果，利刃、启迪不推荐'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '7级D牌找两星亚索永恩',
-                    heroes: ['亚索、永恩、阿狸'],
-                    equipment: '亚索：无尽+夜刃/暗裔镰',
-                    tips: '夜刃、暗裔镰改动后很适合亚索'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '8人口补齐阵容',
-                    heroes: ['凯南、孙悟空、妮蔻'],
-                    equipment: '永恩：法术装为主（AP伤害偏多）',
-                    tips: '有芸阿娜装备可替换狐狸、妮蔻'
-                }
-            }
-        },
-        {
-            id: 10,
-            name: '艾希蛮王',
-            tier: 'A',
-            heroes: [16, 28, 49, 26, 54, 1],
-            mainCarry: 28,
-            equipment: {
-                main: [13, 37, 17],
-                sub: [34, 39, 40]
-            },
-            traits: ['3弗雷尔卓德', '2护卫', '2狙神'],
-            description: '蛮王主C，艾希辅助控制',
-            winRate: '22%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '正常过渡',
-                    heroes: ['艾希、猪妹、妮蔻'],
-                    equipment: '给艾希1散件解锁蛮王',
-                    tips: '艾希、蛮王、猪妹三个加强'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '7级D牌追三星',
-                    heroes: ['猪妹、妮蔻、蛮王、艾希追3'],
-                    equipment: '蛮王：吸血+免控+攻速',
-                    tips: '蛮王必备吸血+免控+攻速'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '8人口补齐阵容',
-                    heroes: ['布隆、艾尼维亚等'],
-                    equipment: '蛮王适配神器：火炮、死舞、连指、烁刃',
-                    tips: '蛮王适配神器太多，火炮最强'
-                }
-            }
-        },
-        {
-            id: 11,
-            name: '暗影岛锤石',
-            tier: 'A',
-            heroes: [10, 37, 79, 87, 53, 32],
-            mainCarry: 79,
-            equipment: {
-                main: [29, 25, 27],
-                sub: [34, 39, 33]
-            },
-            traits: ['5暗影岛', '2主宰', '2迅击战士'],
-            description: '暗影岛灵魂体系，锤石主C',
-            winRate: '26%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '开局刷到破败之王可考虑',
-                    heroes: ['佛耶戈、约里克'],
-                    equipment: '佛耶戈带滑板鞋装备过渡',
-                    tips: '二星佛耶戈装备合适就可以考虑'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '7级D牌找格温',
-                    heroes: ['格温带锤石装备过渡'],
-                    equipment: '格温：青龙刀、法爆、鬼书',
-                    tips: '格温带锤石装备过渡'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '解锁锤石后成型',
-                    heroes: ['锤石、千珏、卑尔维斯'],
-                    equipment: '锤石：青龙刀、法爆、鬼书',
-                    tips: '解锁锤石需要暗影岛收集150个灵魂'
-                }
-            }
-        },
-        {
-            id: 12,
-            name: '皮城霸王龙',
-            tier: 'B',
-            heroes: [17, 30, 64, 86, 81],
-            mainCarry: 81,
-            equipment: {
-                main: [17, 10, 11],
-                sub: [34, 39, 33]
-            },
-            traits: ['4皮尔特沃夫', '2法师', '2斗士'],
-            description: '海克斯霸王龙主C，全数值加强',
-            winRate: '20%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '正常过渡',
-                    heroes: ['发条、蔚、凯特琳'],
-                    equipment: '优先合成霸王龙装备',
-                    tips: '皮城武器全面加强'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '7级D牌找皮城棋子',
-                    heroes: ['发条、蔚、萨勒芬妮'],
-                    equipment: '霸王龙：羊刀、无尽、巨杀',
-                    tips: '霸王龙全数值加强但未到巅峰'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '8人口解锁霸王龙',
-                    heroes: ['梅尔等高费卡'],
-                    equipment: '前排合成肉装',
-                    tips: '皮城总星级大于9解锁霸王龙'
-                }
-            }
-        },
-        {
-            id: 13,
-            name: '德玛西亚狙神',
-            tier: 'A',
-            heroes: [2, 13, 57, 60, 50, 85, 84],
-            mainCarry: 85,
-            equipment: {
-                main: [17, 10, 11],
-                sub: [33, 34, 39]
-            },
-            traits: ['5德玛西亚', '3狙神', '2枪手'],
-            description: '卢锡安&塞纳主C，德玛西亚体系',
-            winRate: '24%+',
-            stages: {
-                early: {
-                    level: '2-1至3-2',
-                    economy: '连胜连败均可',
-                    heroes: ['娑娜、嘉文四世、薇恩'],
-                    equipment: '优先合成卢锡安装备',
-                    tips: '德玛西亚获得护甲和魔抗'
-                },
-                mid: {
-                    level: '3-2至4-7',
-                    economy: '7级D牌找德玛棋子',
-                    heroes: ['盖伦、拉克丝、薇恩'],
-                    equipment: '卢锡安&塞纳：羊刀、无尽、巨杀',
-                    tips: '队伍损失25%血量触发重振旗鼓'
-                },
-                late: {
-                    level: '5-1至6-1',
-                    economy: '8人口补齐5德玛',
-                    heroes: ['加里奥等高费卡'],
-                    equipment: '前排：盖伦、洛里斯合成肉装',
-                    tips: '5德玛西亚护甲魔抗大幅提升'
-                }
+            late: {
+                level: '5-1至6-1',
+                economy: '8人口补齐3暗裔羁绊',
+                heroes: ['雷克顿等高费卡'],
+                equipment: '前排：日炎、反甲、狂徒',
+                tips: '剑魔生命值提升至1000，法力值降低至0/20'
             }
         }
-    ]
+    },
+    {
+        id: 3,
+        name: '虚空卡莎',
+        tier: 'A',
+        heroes: [59, 44, 24, 12, 71, 72, 3],
+        mainCarry: 59,
+        equipment: {
+            main: [18, 11, 12],
+            sub: [34, 37, 36]
+        },
+        traits: ['4虚空', '4主宰', '3祖安'],
+        description: '16.3版本7级即可解锁，2虚空必给进攻型突变',
+        winRate: '29%+',
+        stages: {
+            early: {
+                level: '2-1至3-2',
+                economy: '正常过渡，连胜连败均可',
+                heroes: ['蚂蚱、科加斯、雷克赛'],
+                equipment: '优先合成卡莎装备：羊刀、无尽、巨杀',
+                tips: '2虚空必给进攻型突变，前期战力更强'
+            },
+            mid: {
+                level: '3-2至4-7',
+                economy: '7级即可解锁卡莎（16.3版本优化）',
+                heroes: ['凑齐虚空+主宰羁绊'],
+                equipment: '卡莎：羊刀、无尽、巨杀',
+                tips: '7级解锁提前发力，节奏更好'
+            },
+            late: {
+                level: '5-1至6-1',
+                economy: '8人口成型，9人口补吉格斯',
+                heroes: ['4虚空4主宰3祖安阵型'],
+                equipment: '前排：反甲、龙牙、石像鬼',
+                tips: '虚空突变优化，主宰纹章虽被削弱但仍可用'
+            }
+        }
+    },
+    {
+        id: 4,
+        name: '暗影岛滑板鞋',
+        tier: 'A',
+        heroes: [58, 79, 87, 80, 53],
+        mainCarry: 58,
+        equipment: {
+            main: [18, 11, 12],
+            sub: [30, 26, 31]
+        },
+        traits: ['5暗影岛', '3枪手', '2神谕者'],
+        description: '16.3版本BUG修复，锤石加强，千珏机制改动',
+        winRate: '28%+',
+        stages: {
+            early: {
+                level: '2-1至3-2',
+                economy: '连胜连败均可，保证血量',
+                heroes: ['佛耶戈、约里克'],
+                equipment: '优先合成滑板鞋装备：羊刀、无尽',
+                tips: '用暗影岛棋子过渡'
+            },
+            mid: {
+                level: '3-2至4-7',
+                economy: '7级找两星滑板鞋和锤石',
+                heroes: ['滑板鞋、锤石、卑尔维斯'],
+                equipment: '锤石：青龙刀、珠光护手、大天使',
+                tips: '滑板鞋技能后摇BUG已修复，输出更流畅'
+            },
+            late: {
+                level: '5-1至6-1',
+                economy: '8人口补充千珏开启闭环',
+                heroes: ['千珏、费德提克'],
+                equipment: '前排：日炎、反甲、龙牙',
+                tips: '锤石被动吸血提升至75%，千珏改为提供护盾'
+            }
+        }
+    },
+    {
+        id: 5,
+        name: '皮尔特沃夫梅尔',
+        tier: 'A',
+        heroes: [86, 17, 64, 30, 8, 81],
+        mainCarry: 86,
+        equipment: {
+            main: [25, 26, 30],
+            sub: [35, 34, 40]
+        },
+        traits: ['6皮尔特沃夫', '4法师', '2斗士'],
+        description: '16.3b版本梅尔大幅加强，皮尔特沃夫羁绊优化',
+        winRate: '27%+',
+        stages: {
+            early: {
+                level: '2-1至3-2',
+                economy: '连胜连败均可',
+                heroes: ['奥莉安娜', '凯特琳'],
+                equipment: '优先合成法术装备',
+                tips: '用皮尔特沃夫2费卡过渡'
+            },
+            mid: {
+                level: '3-2至4-7',
+                economy: '7级找发条、萨勒芬妮',
+                heroes: ['发条、萨勒芬妮、蔚'],
+                equipment: '法师装备：帽子、珠光、青龙',
+                tips: '发条解锁条件降低，更容易获得'
+            },
+            late: {
+                level: '5-1至6-1',
+                economy: '8人口找梅尔，补齐6皮尔特沃夫',
+                heroes: ['梅尔、海克斯霸龙'],
+                equipment: '梅尔：帽子、珠光、青龙/大天使',
+                tips: '梅尔飞弹伤害从40/60/90提升至65/100/150'
+            }
+        }
+    },
+    {
+        id: 6,
+        name: '以绪塔尔奇亚娜',
+        tier: 'A',
+        heroes: [5, 18, 46, 26, 65, 63],
+        mainCarry: 5,
+        equipment: {
+            main: [11, 12, 15],
+            sub: [30, 31, 26]
+        },
+        traits: ['5以绪塔尔', '2裁决战士', '2神谕者'],
+        description: '16.3版本以绪塔尔探险优化，奇亚娜太阳碎片获取提升',
+        winRate: '26%+',
+        stages: {
+            early: {
+                level: '2-1至3-2',
+                economy: '完成以绪塔尔小任务，积累太阳碎片',
+                heroes: ['奇亚娜', '巴德', '妮蔻'],
+                equipment: '优先合成奇亚娜装备：无尽、巨杀、轻语',
+                tips: '奇亚娜太阳碎片获取大幅提升（20/30/40⇒30/50/80）'
+            },
+            mid: {
+                level: '3-2至4-7',
+                economy: '7级找两星奇亚娜和巴德',
+                heroes: ['奇亚娜、巴德、米利欧'],
+                equipment: '巴德：青龙刀、大天使、珠光',
+                tips: '以绪塔尔探险难度降低，更容易完成'
+            },
+            late: {
+                level: '5-1至6-1',
+                economy: '8人口成型，兑换以绪塔尔奖励',
+                heroes: ['斯卡纳、奈德丽等高费卡'],
+                equipment: '前排：日炎、反甲、狂徒',
+                tips: '以绪塔尔奖励优化，更容易获得英雄复制器'
+            }
+        }
+    },
+    {
+        id: 7,
+        name: '巨神峰龙王（已削弱）',
+        tier: 'B',
+        heroes: [22, 51, 42, 75, 68, 54, 78, 80, 94],
+        mainCarry: 94,
+        equipment: {
+            main: [20, 26, 30],
+            sub: [35, 34, 37]
+        },
+        traits: ['6巨神峰', '2神盾使'],
+        description: '16.3b版本大幅削弱，不再推荐',
+        winRate: '22%',
+        stages: {
+            early: {
+                level: '2-1至3-2',
+                economy: '经济类强化开局',
+                heroes: ['佐伊', '厄斐琉斯', '蕾欧娜'],
+                equipment: '优先合成龙王装备：纳什、珠光、青龙',
+                tips: '龙王法力值大砍（25/75⇒0/85），起手慢'
+            },
+            mid: {
+                level: '3-5至4-7',
+                economy: '3-5拉7级，找宝石解锁皎月',
+                heroes: ['两星蕾欧娜解锁皎月'],
+                equipment: '龙王解锁后拆装备',
+                tips: '流星伤害腰斩（1000/1500⇒500/750）'
+            },
+            late: {
+                level: '5-1至6-1',
+                economy: '5-1拉8级',
+                heroes: ['补齐巨神峰羁绊'],
+                equipment: '前排肉装',
+                tips: '龙王已从T0跌落至B级，不推荐'
+            }
+        }
+    },
+    {
+        id: 8,
+        name: '闭环金克丝（已削弱）',
+        tier: 'B',
+        heroes: [38, 49, 54, 68, 16, 17],
+        mainCarry: 38,
+        equipment: {
+            main: [18, 15, 12],
+            sub: [35, 34, 37]
+        },
+        traits: ['4护卫', '4枪手'],
+        description: '16.3b版本削弱，竞争力下降',
+        winRate: '24%',
+        stages: {
+            early: {
+                level: '2-1至3-2',
+                economy: '连胜连败均可',
+                heroes: ['金克丝', '瑟庄妮', '布里茨'],
+                equipment: '优先合成金克丝装备：羊刀、轻语、巨杀',
+                tips: '金克丝技能伤害被削弱（65/100/155⇒60/80/145）'
+            },
+            mid: {
+                level: '3-2至4-7',
+                economy: '3-2拉6人口，4-1拉7级',
+                heroes: ['找两星金克丝、布隆'],
+                equipment: '金克丝：羊刀+轻语+巨杀',
+                tips: '发条护盾大幅削弱（80/120/200/280⇒60/90/130/200）'
+            },
+            late: {
+                level: '5-1至6-1',
+                economy: '5-1拉8人口',
+                heroes: ['补齐羁绊'],
+                equipment: '前排肉装',
+                tips: '金克丝已从T0跌落至B级，不推荐'
+            }
+        }
+    }
+]
 };
