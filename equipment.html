@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>装备合成 - 金铲铲阵容查询助手</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>⚔️ 金铲铲阵容助手</h1>
+                <span class="version">S16 - 16.3版本</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">阵容查询</a>
+                <a href="heroes.html" class="nav-link">英雄图鉴</a>
+                <a href="equipment.html" class="nav-link active">装备合成</a>
+                <a href="traits.html" class="nav-link">羁绊查询</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="main-content">
+        <div class="container">
+            <!-- 基础装备 -->
+            <section class="filter-section">
+                <h2>🔧 基础装备</h2>
+                <div class="base-equipment-grid" id="baseEquipment"></div>
+            </section>
+
+            <!-- 装备分类 -->
+            <section class="filter-section">
+                <h2>⚔️ 成型装备</h2>
+                
+                <div class="filter-group">
+                    <h3>装备类型</h3>
+                    <div class="cost-filter">
+                        <button class="type-btn active" data-type="all">全部</button>
+                        <button class="type-btn" data-type="AD">AD装备</button>
+                        <button class="type-btn" data-type="AS">攻速装备</button>
+                        <button class="type-btn" data-type="AP">法术装备</button>
+                        <button class="type-btn" data-type="MANA">法力装备</button>
+                        <button class="type-btn" data-type="DEF">防御装备</button>
+                        <button class="type-btn" data-type="HP">生命装备</button>
+                        <button class="type-btn" data-type="CRIT">暴击装备</button>
+                        <button class="type-btn" data-type="EMBLEM">转职装备</button>
+                        <button class="type-btn" data-type="ORNN">奥恩神器</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>搜索装备</h3>
+                    <input type="text" id="equipSearch" placeholder="输入装备名称..." class="search-input">
+                </div>
+            </section>
+
+            <!-- 装备列表 -->
+            <section class="results-section">
+                <h2>📋 装备列表 <span id="equipCount">(74件成型装备)</span></h2>
+                <div id="equipmentGrid" class="equipment-display-grid"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 金铲铲阵容助手 | 数据基于S16 16.3版本 | 仅供参考</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="equipment-page.js"></script>
+</body>
+</html>

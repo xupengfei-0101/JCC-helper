@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>羁绊查询 - 金铲铲阵容查询助手</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>⚔️ 金铲铲阵容助手</h1>
+                <span class="version">S16 - 16.3版本</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">阵容查询</a>
+                <a href="heroes.html" class="nav-link">英雄图鉴</a>
+                <a href="equipment.html" class="nav-link">装备合成</a>
+                <a href="traits.html" class="nav-link active">羁绊查询</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="main-content">
+        <div class="container">
+            <!-- 城邦羁绊 -->
+            <section class="filter-section">
+                <h2>🏰 城邦羁绊 (13个)</h2>
+                <div class="traits-grid" id="regionTraits"></div>
+            </section>
+
+            <!-- 职业羁绊 -->
+            <section class="filter-section">
+                <h2>⚔️ 职业羁绊 (11个)</h2>
+                <div class="traits-grid" id="classTraits"></div>
+            </section>
+
+            <!-- 特殊羁绊 -->
+            <section class="filter-section">
+                <h2>✨ 特殊羁绊 (4个)</h2>
+                <div class="traits-grid" id="specialTraits"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 金铲铲阵容助手 | 数据基于S16 16.3版本 | 仅供参考</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="traits.js"></script>
+</body>
+</html>

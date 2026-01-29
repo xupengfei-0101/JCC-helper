@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金铲铲阵容查询助手 - S16赛季</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>⚔️ 金铲铲阵容助手</h1>
+                <span class="version">S16 - 16.3版本</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">阵容查询</a>
+                <a href="heroes.html" class="nav-link">英雄图鉴</a>
+                <a href="equipment.html" class="nav-link">装备合成</a>
+                <a href="traits.html" class="nav-link">羁绊查询</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="main-content">
+        <div class="container">
+            <!-- 筛选区域 -->
+            <section class="filter-section">
+                <h2>🔍 阵容筛选</h2>
+                
+                <!-- 英雄选择 -->
+                <div class="filter-group">
+                    <h3>选择英雄</h3>
+                    <div class="hero-filter">
+                        <input type="text" id="heroSearch" placeholder="搜索英雄..." class="search-input">
+                        <div class="cost-filter">
+                            <button class="cost-btn active" data-cost="all">全部</button>
+                            <button class="cost-btn" data-cost="1">1费</button>
+                            <button class="cost-btn" data-cost="2">2费</button>
+                            <button class="cost-btn" data-cost="3">3费</button>
+                            <button class="cost-btn" data-cost="4">4费</button>
+                            <button class="cost-btn" data-cost="5">5费</button>
+                            <button class="cost-btn" data-cost="7">7费</button>
+                        </div>
+                        <div id="heroList" class="hero-list"></div>
+                        <div class="selected-heroes">
+                            <h4>已选英雄：</h4>
+                            <div id="selectedHeroes" class="selected-items"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 装备选择 -->
+                <div class="filter-group">
+                    <h3>选择装备</h3>
+                    <div class="equipment-filter">
+                        <input type="text" id="equipSearch" placeholder="搜索装备..." class="search-input">
+                        <div id="equipmentList" class="equipment-list"></div>
+                        <div class="selected-equipment">
+                            <h4>已选装备：</h4>
+                            <div id="selectedEquipment" class="selected-items"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 查询按钮 -->
+                <div class="action-buttons">
+                    <button id="searchBtn" class="btn btn-primary">🔍 查询阵容</button>
+                    <button id="resetBtn" class="btn btn-secondary">🔄 重置</button>
+                </div>
+            </section>
+
+            <!-- 阵容结果区域 -->
+            <section class="results-section">
+                <h2>📋 推荐阵容</h2>
+                <div id="lineupResults" class="lineup-grid"></div>
+            </section>
+
+            <!-- 阵容详情弹窗 -->
+            <div id="lineupModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="lineupDetail"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 金铲铲阵容助手 | 数据基于S16 16.3版本 | 仅供参考</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,717 @@
+// 游戏数据
+const gameData = {
+    // 英雄数据 - S16赛季完整100个英雄
+    heroes: [
+        // ========== 1费英雄 (14个) ==========
+        { id: 1, name: '艾尼维亚', icon: '🦅', cost: 1, traits: ['弗雷尔卓德', '神谕者'] },
+        { id: 2, name: '娑娜', icon: '🎵', cost: 1, traits: ['德玛西亚', '神谕者'] },
+        { id: 3, name: '布里茨', icon: '🤖', cost: 1, traits: ['祖安', '主宰'] },
+        { id: 4, name: '烬', icon: '🎭', cost: 1, traits: ['艾欧尼亚', '枪手'] },
+        { id: 5, name: '奇亚娜', icon: '💎', cost: 1, traits: ['以绪塔尔', '裁决战士'] },
+        { id: 6, name: '慎', icon: '🥷', cost: 1, traits: ['艾欧尼亚', '护卫'] },
+        { id: 7, name: '璐璐', icon: '🧚', cost: 1, traits: ['约德尔人', '法师'] },
+        { id: 8, name: '凯特琳', icon: '🎯', cost: 1, traits: ['皮尔特沃夫', '狙神'] },
+        { id: 9, name: '俄洛伊', icon: '🐙', cost: 1, traits: ['比尔吉沃特', '斗士'] },
+        { id: 10, name: '佛耶戈', icon: '👑', cost: 1, traits: ['暗影岛', '迅击战士'] },
+        { id: 11, name: '兰博', icon: '🔥', cost: 1, traits: ['约德尔人', '护卫'] },
+        { id: 12, name: '克格莫', icon: '🦎', cost: 1, traits: ['虚空', '狙神'] },
+        { id: 13, name: '嘉文四世', icon: '🛡️', cost: 1, traits: ['德玛西亚', '护卫'] },
+        { id: 14, name: '贝蕾亚', icon: '⚔️', cost: 1, traits: ['诺克萨斯', '裁决战士'] },
+        
+        // ========== 2费英雄 (19个) ==========
+        { id: 15, name: '艾克', icon: '⏰', cost: 2, traits: ['祖安', '迅击战士'] },
+        { id: 16, name: '艾希', icon: '❄️', cost: 2, traits: ['弗雷尔卓德', '狙神'] },
+        { id: 17, name: '奥莉安娜', icon: '⚙️', cost: 2, traits: ['皮尔特沃夫', '法师'] },
+        { id: 18, name: '巴德', icon: '🎵', cost: 2, traits: ['以绪塔尔', '神谕者'] },
+        { id: 19, name: '波比', icon: '🔨', cost: 2, traits: ['约德尔人', '护卫'] },
+        { id: 20, name: '崔丝塔娜', icon: '💥', cost: 2, traits: ['约德尔人', '枪手'] },
+        { id: 21, name: '崔斯特', icon: '🎴', cost: 2, traits: ['比尔吉沃特', '法师'] },
+        { id: 22, name: '厄斐琉斯', icon: '🌙', cost: 2, traits: ['巨神峰', '狙神'] },
+        { id: 23, name: '格雷福斯', icon: '🔫', cost: 2, traits: ['比尔吉沃特', '枪手'] },
+        { id: 24, name: '科加斯', icon: '👾', cost: 2, traits: ['虚空', '主宰'] },
+        { id: 25, name: '雷克赛', icon: '🦂', cost: 2, traits: ['虚空', '斗士'] },
+        { id: 26, name: '妮蔻', icon: '🦎', cost: 2, traits: ['以绪塔尔', '护卫'] },
+        { id: 27, name: '塞恩', icon: '💀', cost: 2, traits: ['诺克萨斯', '护卫'] },
+        { id: 28, name: '泰达米尔', icon: '⚔️', cost: 2, traits: ['弗雷尔卓德', '迅击战士'] },
+        { id: 29, name: '提莫', icon: '🍄', cost: 2, traits: ['约德尔人', '狙神'] },
+        { id: 30, name: '蔚', icon: '👊', cost: 2, traits: ['皮尔特沃夫', '斗士'] },
+        { id: 31, name: '亚索', icon: '🌪️', cost: 2, traits: ['艾欧尼亚', '迅击战士'] },
+        { id: 32, name: '约里克', icon: '⚰️', cost: 2, traits: ['暗影岛', '主宰'] },
+        { id: 33, name: '赵信', icon: '🗡️', cost: 2, traits: ['艾欧尼亚', '迅击战士'] },
+        
+        // ========== 3费英雄 (18个) ==========
+        { id: 34, name: '阿狸', icon: '🦊', cost: 3, traits: ['艾欧尼亚', '法师'] },
+        { id: 35, name: '德莱厄斯', icon: '🪓', cost: 3, traits: ['诺克萨斯', '征服者'] },
+        { id: 36, name: '德莱文', icon: '🎯', cost: 3, traits: ['诺克萨斯', '枪手'] },
+        { id: 37, name: '格温', icon: '✂️', cost: 3, traits: ['暗影岛', '迅击战士'] },
+        { id: 38, name: '金克丝', icon: '💣', cost: 3, traits: ['祖安', '枪手'] },
+        { id: 39, name: '凯南', icon: '⚡', cost: 3, traits: ['艾欧尼亚', '约德尔人', '法师'] },
+        { id: 40, name: '可酷伯&悠米', icon: '🐱', cost: 3, traits: ['约德尔人', '神谕者'] },
+        { id: 41, name: '乐芙兰', icon: '🎭', cost: 3, traits: ['诺克萨斯', '法师'] },
+        { id: 42, name: '蕾欧娜', icon: '☀️', cost: 3, traits: ['巨神峰', '护卫'] },
+        { id: 43, name: '洛里斯', icon: '🛡️', cost: 3, traits: ['德玛西亚', '神盾使'] },
+        { id: 44, name: '马尔扎哈', icon: '🦗', cost: 3, traits: ['虚空', '法师'] },
+        { id: 45, name: '蒙多', icon: '💉', cost: 3, traits: ['祖安', '斗士'] },
+        { id: 46, name: '米利欧', icon: '🔥', cost: 3, traits: ['以绪塔尔', '神谕者'] },
+        { id: 47, name: '诺提勒斯', icon: '⚓', cost: 3, traits: ['比尔吉沃特', '神盾使'] },
+        { id: 48, name: '普朗克', icon: '🏴‍☠️', cost: 3, traits: ['比尔吉沃特', '枪手'] },
+        { id: 49, name: '瑟庄妮', icon: '🐗', cost: 3, traits: ['弗雷尔卓德', '护卫'] },
+        { id: 50, name: '薇恩', icon: '🏹', cost: 3, traits: ['德玛西亚', '狙神'] },
+        { id: 51, name: '佐伊', icon: '✨', cost: 3, traits: ['巨神峰', '法师'] },
+        
+        // ========== 4费英雄 (23个) ==========
+        { id: 52, name: '安倍萨', icon: '🐺', cost: 4, traits: ['弗雷尔卓德', '征服者'] },
+        { id: 53, name: '卑尔维斯', icon: '🦇', cost: 4, traits: ['暗影岛', '迅击战士'] },
+        { id: 54, name: '布隆', icon: '🛡️', cost: 4, traits: ['弗雷尔卓德', '神盾使'] },
+        { id: 55, name: '厄运小姐', icon: '🔫', cost: 4, traits: ['比尔吉沃特', '枪手'] },
+        { id: 56, name: '菲兹', icon: '🐟', cost: 4, traits: ['比尔吉沃特', '约德尔人', '迅击战士'] },
+        { id: 57, name: '盖伦', icon: '⚔️', cost: 4, traits: ['德玛西亚', '护卫'] },
+        { id: 58, name: '卡莉斯塔', icon: '👻', cost: 4, traits: ['暗影岛', '枪手'] },
+        { id: 59, name: '卡莎', icon: '🦋', cost: 4, traits: ['虚空', '枪手'] },
+        { id: 60, name: '拉克丝', icon: '💫', cost: 4, traits: ['德玛西亚', '法师'] },
+        { id: 61, name: '雷克顿', icon: '🐊', cost: 4, traits: ['恕瑞玛', '征服者'] },
+        { id: 62, name: '丽桑卓', icon: '❄️', cost: 4, traits: ['弗雷尔卓德', '法师'] },
+        { id: 63, name: '奈德丽', icon: '🐆', cost: 4, traits: ['以绪塔尔', '迅击战士'] },
+        { id: 64, name: '萨勒芬妮', icon: '🎤', cost: 4, traits: ['皮尔特沃夫', '法师'] },
+        { id: 65, name: '斯卡纳', icon: '🦂', cost: 4, traits: ['以绪塔尔', '护卫'] },
+        { id: 66, name: '斯维因', icon: '🦅', cost: 4, traits: ['诺克萨斯', '法师'] },
+        { id: 67, name: '孙悟空', icon: '🐵', cost: 4, traits: ['艾欧尼亚', '斗士'] },
+        { id: 68, name: '塔里克', icon: '💎', cost: 4, traits: ['巨神峰', '神盾使'] },
+        { id: 69, name: '维嘉', icon: '🌟', cost: 4, traits: ['约德尔人', '法师'] },
+        { id: 70, name: '沃里克', icon: '🐺', cost: 4, traits: ['祖安', '斗士'] },
+        { id: 71, name: '峡谷先锋', icon: '👁️', cost: 4, traits: ['虚空', '主宰'] },
+        { id: 72, name: '辛吉德', icon: '☠️', cost: 4, traits: ['祖安', '主宰'] },
+        { id: 73, name: '永恩', icon: '👹', cost: 4, traits: ['艾欧尼亚', '迅击战士'] },
+        { id: 74, name: '芸阿娜', icon: '🏹', cost: 4, traits: ['艾欧尼亚', '狙神'] },
+        { id: 75, name: '黛安娜', icon: '🌙', cost: 4, traits: ['巨神峰', '迅击战士'] },
+        
+        // ========== 5费英雄 (18个) ==========
+        { id: 76, name: '阿兹尔', icon: '🏜️', cost: 5, traits: ['恕瑞玛', '法师'] },
+        { id: 77, name: '安妮', icon: '🧸', cost: 5, traits: ['诺克萨斯', '法师'] },
+        { id: 78, name: '奥恩', icon: '🔨', cost: 5, traits: ['弗雷尔卓德', '护卫'] },
+        { id: 79, name: '锤石', icon: '⛓️', cost: 5, traits: ['暗影岛', '神盾使'] },
+        { id: 80, name: '费德提克', icon: '👻', cost: 5, traits: ['暗影岛', '法师'] },
+        { id: 81, name: '海克斯霸王龙', icon: '🦖', cost: 5, traits: ['皮尔特沃夫', '征服者'] },
+        { id: 82, name: '基兰', icon: '⏳', cost: 5, traits: ['以绪塔尔', '神谕者'] },
+        { id: 83, name: '吉格斯', icon: '💥', cost: 5, traits: ['祖安', '约德尔人', '法师'] },
+        { id: 84, name: '加里奥', icon: '🗿', cost: 5, traits: ['德玛西亚', '神盾使'] },
+        { id: 85, name: '卢锡安&塞纳', icon: '👫', cost: 5, traits: ['德玛西亚', '枪手'] },
+        { id: 86, name: '梅尔', icon: '✨', cost: 5, traits: ['皮尔特沃夫', '法师'] },
+        { id: 87, name: '千珏', icon: '🐺', cost: 5, traits: ['暗影岛', '狙神'] },
+        { id: 88, name: '瑟提', icon: '👊', cost: 5, traits: ['艾欧尼亚', '斗士'] },
+        { id: 89, name: '塔姆', icon: '🐸', cost: 5, traits: ['比尔吉沃特', '主宰'] },
+        { id: 90, name: '泽拉斯', icon: '⚡', cost: 5, traits: ['恕瑞玛', '法师'] },
+        { id: 91, name: '沃利贝尔', icon: '🐻', cost: 5, traits: ['弗雷尔卓德', '斗士'] },
+        { id: 92, name: '希瓦娜', icon: '🐉', cost: 5, traits: ['德玛西亚', '斗士'] },
+        { id: 93, name: '亚托克斯', icon: '😈', cost: 5, traits: ['暗裔', '征服者'] },
+        
+        // ========== 7费英雄 (7个) ==========
+        { id: 94, name: '奥瑞利安·索尔', icon: '🐲', cost: 7, traits: ['巨神峰', '铸星龙王'] },
+        { id: 95, name: '纳什男爵', icon: '👁️', cost: 7, traits: ['虚空', '征服者'] },
+        { id: 96, name: '瑞兹', icon: '📜', cost: 7, traits: ['符文法师'] },
+        { id: 97, name: '塞拉斯', icon: '⛓️', cost: 7, traits: ['德玛西亚', '法师'] },
+        { id: 98, name: '亚恒', icon: '⚔️', cost: 7, traits: ['艾欧尼亚', '不落魔锋'] },
+        { id: 99, name: '岩宝', icon: '🪨', cost: 7, traits: ['以绪塔尔', '斗士'] },
+        { id: 100, name: '腕豪', icon: '💪', cost: 7, traits: ['艾欧尼亚', '斗士'] },
+    ],
+    
+    // 装备数据 - S16赛季完整装备
+    equipment: [
+        // ========== 基础装备 (9个) ==========
+        { id: 1, name: '暴风之剑', icon: '⚔️', type: 'BASE', effect: '攻击力+10' },
+        { id: 2, name: '反曲之弓', icon: '🏹', type: 'BASE', effect: '攻击速度+10%' },
+        { id: 3, name: '无用大棒', icon: '📿', type: 'BASE', effect: '法术强度+10' },
+        { id: 4, name: '女神之泪', icon: '💧', type: 'BASE', effect: '法力值+15' },
+        { id: 5, name: '锁子甲', icon: '🛡️', type: 'BASE', effect: '护甲+20' },
+        { id: 6, name: '负极斗篷', icon: '🧥', type: 'BASE', effect: '魔抗+20' },
+        { id: 7, name: '巨人腰带', icon: '💪', type: 'BASE', effect: '生命值+150' },
+        { id: 8, name: '拳套', icon: '🥊', type: 'BASE', effect: '暴击率+10%' },
+        { id: 9, name: '金铲铲', icon: '⛏️', type: 'BASE', effect: '合成转职装备' },
+        { id: 10, name: '金锅锅', icon: '🍲', type: 'BASE', effect: '合成职业转职装备' },
+        
+        // ========== 输出装备 (AD) ==========
+        { id: 11, name: '无尽之刃', icon: '⚔️', type: 'AD', effect: '+20攻击力 +20%暴击率 | 暴击伤害+50%', formula: '暴风之剑+拳套' },
+        { id: 12, name: '巨人杀手', icon: '🔪', type: 'AD', effect: '+10攻击力 +10%攻击速度 | 对高血量额外伤害', formula: '暴风之剑+反曲之弓' },
+        { id: 13, name: '正义之手', icon: '⚖️', type: 'AD', effect: '+10攻击力 +15法力值 | 攻击回蓝', formula: '暴风之剑+女神之泪' },
+        { id: 14, name: '饮血剑', icon: '🩸', type: 'AD', effect: '+10攻击力 +20魔抗 | 吸血20%', formula: '暴风之剑+负极斗篷' },
+        { id: 15, name: '轻语', icon: '🌪️', type: 'AD', effect: '+10攻击力 +20护甲 | 破甲40%', formula: '暴风之剑+锁子甲' },
+        { id: 16, name: '血手', icon: '🛡️', type: 'AD', effect: '+10攻击力 +150生命值 | 护盾+复活', formula: '暴风之剑+巨人腰带' },
+        { id: 17, name: '海克斯科技枪刃', icon: '🔫', type: 'AD', effect: '+10攻击力 +10法术强度 | 全能吸血', formula: '暴风之剑+无用大棒' },
+        
+        // ========== 攻速装备 ==========
+        { id: 18, name: '羊刀', icon: '🗡️', type: 'AS', effect: '+20%攻击速度 | 攻速叠加', formula: '反曲之弓+反曲之弓' },
+        { id: 19, name: '鬼索的狂暴之刃', icon: '⚡', type: 'AS', effect: '+10%攻击速度 +10法术强度 | 攻速+法强', formula: '反曲之弓+无用大棒' },
+        { id: 20, name: '纳什之牙', icon: '🦷', type: 'AS', effect: '+10%攻击速度 +10法术强度 | 攻速+法强', formula: '反曲之弓+无用大棒' },
+        { id: 21, name: '斯塔缇克电刃', icon: '⚡', type: 'AS', effect: '+10%攻击速度 +15法力值 | 攻击触发闪电', formula: '反曲之弓+女神之泪' },
+        { id: 22, name: '火炮', icon: '🎯', type: 'AS', effect: '+10%攻击速度 +10%暴击率 | 射程+', formula: '反曲之弓+拳套' },
+        { id: 23, name: '泰坦的坚决', icon: '🛡️', type: 'AS', effect: '+10%攻击速度 +20护甲 | 护盾+控制', formula: '反曲之弓+锁子甲' },
+        { id: 24, name: '破败王者之刃', icon: '👑', type: 'AS', effect: '+10%攻击速度 +150生命值 | 吸血+减速', formula: '反曲之弓+巨人腰带' },
+        
+        // ========== 法术装备 (AP) ==========
+        { id: 25, name: '灭世者的死亡之帽', icon: '🎩', type: 'AP', effect: '+20法术强度 | 法强+75%', formula: '无用大棒+无用大棒' },
+        { id: 26, name: '珠光护手', icon: '💫', type: 'AP', effect: '+10法术强度 +10%暴击率 | 法术暴击', formula: '无用大棒+拳套' },
+        { id: 27, name: '离子火花', icon: '⚛️', type: 'AP', effect: '+10法术强度 +20魔抗 | 减魔抗+灼烧', formula: '无用大棒+负极斗篷' },
+        { id: 28, name: '鬼书', icon: '📖', type: 'AP', effect: '+10法术强度 +20护甲 | 重伤', formula: '无用大棒+锁子甲' },
+        { id: 29, name: '巨龙之爪', icon: '🐲', type: 'AP', effect: '+10法术强度 +150生命值 | 魔抗+反伤', formula: '无用大棒+巨人腰带' },
+        
+        // ========== 法力装备 ==========
+        { id: 30, name: '青龙刀', icon: '🐉', type: 'MANA', effect: '+30法力值 | 技能回蓝', formula: '女神之泪+女神之泪' },
+        { id: 31, name: '大天使之杖', icon: '👼', type: 'MANA', effect: '+15法力值 +10法术强度 | 法力值+法强', formula: '女神之泪+无用大棒' },
+        { id: 32, name: '冰霜之心', icon: '❄️', type: 'MANA', effect: '+15法力值 +20护甲 | 减攻速', formula: '女神之泪+锁子甲' },
+        { id: 33, name: '救赎', icon: '✝️', type: 'MANA', effect: '+15法力值 +150生命值 | 群体回血', formula: '女神之泪+巨人腰带' },
+        
+        // ========== 防御装备 (护甲) ==========
+        { id: 34, name: '反甲', icon: '🛡️', type: 'DEF', effect: '+40护甲 | 反伤+护甲', formula: '锁子甲+锁子甲' },
+        { id: 35, name: '日炎斗篷', icon: '🔥', type: 'DEF', effect: '+20护甲 +150生命值 | 灼烧敌人', formula: '锁子甲+巨人腰带' },
+        { id: 36, name: '石像鬼石板甲', icon: '🗿', type: 'DEF', effect: '+20护甲 +20魔抗 | 护甲+回血', formula: '锁子甲+负极斗篷' },
+        
+        // ========== 防御装备 (魔抗) ==========
+        { id: 37, name: '龙牙', icon: '🦷', type: 'DEF', effect: '+40魔抗 | 魔抗+护盾', formula: '负极斗篷+负极斗篷' },
+        { id: 38, name: '绿甲', icon: '🟢', type: 'DEF', effect: '+20魔抗 +20护甲 | 魔抗+免疫控制', formula: '负极斗篷+锁子甲' },
+        { id: 39, name: '冰甲', icon: '❄️', type: 'DEF', effect: '+20魔抗 +150生命值 | 减速敌人', formula: '负极斗篷+巨人腰带' },
+        
+        // ========== 生命装备 ==========
+        { id: 40, name: '狂徒铠甲', icon: '❤️', type: 'HP', effect: '+300生命值 | 生命值+回血', formula: '巨人腰带+巨人腰带' },
+        { id: 41, name: '振奋铠甲', icon: '💪', type: 'HP', effect: '+150生命值 +20护甲 | 回血+护盾', formula: '巨人腰带+锁子甲' },
+        { id: 42, name: '心之钢', icon: '💗', type: 'HP', effect: '+150生命值 +10%暴击率 | 生命值成长', formula: '巨人腰带+拳套' },
+        
+        // ========== 暴击装备 ==========
+        { id: 43, name: '最后的轻语', icon: '🌬️', type: 'CRIT', effect: '+10%暴击率 +20护甲 | 暴击+破甲', formula: '拳套+锁子甲' },
+        { id: 44, name: '守护天使', icon: '😇', type: 'CRIT', effect: '+10%暴击率 +20护甲 | 复活', formula: '拳套+锁子甲' },
+        { id: 45, name: '泽克的传送门', icon: '🌀', type: 'CRIT', effect: '+10%暴击率 +150生命值 | 传送+群伤', formula: '拳套+巨人腰带' },
+        
+        // ========== 转职装备 - 城邦 (金铲铲) ==========
+        { id: 46, name: '虚空纹章', icon: '👁️', type: 'EMBLEM', effect: '使携带者获得虚空羁绊 | +10%攻击速度 +150生命值', formula: '金铲铲+反曲之弓' },
+        { id: 47, name: '诺克萨斯纹章', icon: '🪓', type: 'EMBLEM', effect: '使携带者获得诺克萨斯羁绊 | +10攻击力 +150生命值', formula: '金铲铲+暴风之剑' },
+        { id: 48, name: '约德尔人纹章', icon: '🍄', type: 'EMBLEM', effect: '使携带者获得约德尔人羁绊 | +20魔抗 +150生命值', formula: '金铲铲+负极斗篷' },
+        { id: 49, name: '德玛西亚纹章', icon: '⚔️', type: 'EMBLEM', effect: '使携带者获得德玛西亚羁绊 | +20护甲 +150生命值', formula: '金铲铲+锁子甲' },
+        { id: 50, name: '祖安纹章', icon: '☠️', type: 'EMBLEM', effect: '使携带者获得祖安羁绊 | +10%暴击率 +150生命值', formula: '金铲铲+拳套' },
+        { id: 51, name: '弗雷尔卓德纹章', icon: '❄️', type: 'EMBLEM', effect: '使携带者获得弗雷尔卓德羁绊 | +150生命值 +150生命值', formula: '金铲铲+巨人腰带' },
+        { id: 52, name: '比尔吉沃特纹章', icon: '🏴‍☠️', type: 'EMBLEM', effect: '使携带者获得比尔吉沃特羁绊 | +15法力值 +150生命值', formula: '金铲铲+女神之泪' },
+        { id: 53, name: '艾欧尼亚纹章', icon: '🌸', type: 'EMBLEM', effect: '使携带者获得艾欧尼亚羁绊 | +10法术强度 +150生命值', formula: '金铲铲+无用大棒' },
+        { id: 54, name: '暗影岛纹章', icon: '👻', type: 'EMBLEM', effect: '使携带者获得暗影岛羁绊 | +300生命值', formula: '金铲铲+金铲铲' },
+        { id: 55, name: '以绪塔尔纹章', icon: '💎', type: 'EMBLEM', effect: '使携带者获得以绪塔尔羁绊 | +300生命值', formula: '金铲铲+金铲铲' },
+        { id: 56, name: '巨神峰纹章', icon: '⭐', type: 'EMBLEM', effect: '使携带者获得巨神峰羁绊 | +300生命值', formula: '金铲铲+金铲铲' },
+        { id: 57, name: '皮尔特沃夫纹章', icon: '⚙️', type: 'EMBLEM', effect: '使携带者获得皮尔特沃夫羁绊 | +300生命值', formula: '金铲铲+金铲铲' },
+        { id: 58, name: '恕瑞玛纹章', icon: '🏜️', type: 'EMBLEM', effect: '使携带者获得恕瑞玛羁绊 | +300生命值', formula: '金铲铲+金铲铲' },
+        
+        // ========== 转职装备 - 职业 (金锅锅) ==========
+        { id: 59, name: '迅击战士纹章', icon: '⚡', type: 'EMBLEM', effect: '使携带者获得迅击战士羁绊 | +10%攻击速度 +150生命值', formula: '金锅锅+反曲之弓' },
+        { id: 60, name: '神谕者纹章', icon: '🔮', type: 'EMBLEM', effect: '使携带者获得神谕者羁绊 | +15法力值 +150生命值', formula: '金锅锅+女神之泪' },
+        { id: 61, name: '法师纹章', icon: '🔮', type: 'EMBLEM', effect: '使携带者获得法师羁绊 | +10法术强度 +150生命值', formula: '金锅锅+无用大棒' },
+        { id: 62, name: '斗士纹章', icon: '💪', type: 'EMBLEM', effect: '使携带者获得斗士羁绊 | +150生命值 +150生命值', formula: '金锅锅+巨人腰带' },
+        { id: 63, name: '征服者纹章', icon: '💪', type: 'EMBLEM', effect: '使携带者获得征服者羁绊 | +10%暴击率 +150生命值', formula: '金锅锅+拳套' },
+        { id: 64, name: '裁决战士纹章', icon: '⚔️', type: 'EMBLEM', effect: '使携带者获得裁决战士羁绊 | +10攻击力 +150生命值', formula: '金锅锅+暴风之剑' },
+        { id: 65, name: '主宰纹章', icon: '👹', type: 'EMBLEM', effect: '使携带者获得主宰羁绊 | +20魔抗 +150生命值', formula: '金锅锅+负极斗篷' },
+        { id: 66, name: '护卫纹章', icon: '🛡️', type: 'EMBLEM', effect: '使携带者获得护卫羁绊 | +20护甲 +150生命值', formula: '金锅锅+锁子甲' },
+        { id: 67, name: '枪手纹章', icon: '🔫', type: 'EMBLEM', effect: '使携带者获得枪手羁绊 | +300生命值', formula: '金锅锅+金锅锅' },
+        { id: 68, name: '狙神纹章', icon: '🎯', type: 'EMBLEM', effect: '使携带者获得狙神羁绊 | +300生命值', formula: '金锅锅+金锅锅' },
+        { id: 69, name: '神盾使纹章', icon: '🛡️', type: 'EMBLEM', effect: '使携带者获得神盾使羁绊 | +300生命值', formula: '金锅锅+金锅锅' },
+        
+        // ========== 奥恩神器 ==========
+        { id: 70, name: '钻石之手', icon: '💎', type: 'ORNN', effect: '法强+生命值，受到伤害时1.5秒免疫伤害', formula: '奥恩锻造' },
+        { id: 71, name: '永恒凛冬', icon: '❄️', type: 'ORNN', effect: '攻击减速敌人，7层减速眩晕目标', formula: '奥恩锻造' },
+        { id: 72, name: '中娅悖论', icon: '⏳', type: 'ORNN', effect: '法强+双抗，受伤时无敌3秒并清除仇恨', formula: '奥恩锻造' },
+        { id: 73, name: '光盾徽章', icon: '🛡️', type: 'ORNN', effect: '双抗+50，每3秒给最低血量友军护盾', formula: '奥恩锻造' },
+        { id: 74, name: '幽魂弯刀', icon: '👻', type: 'ORNN', effect: '开局跳后排，8秒后威胁敌方后排', formula: '奥恩锻造' },
+        { id: 75, name: '视界专注', icon: '👁️', type: 'ORNN', effect: '双抗+生命+法力，眩晕时造成额外魔法伤害', formula: '奥恩锻造' },
+        { id: 76, name: '诡术师之镜', icon: '🪞', type: 'ORNN', effect: '复制携带者，复制体继承装备', formula: '奥恩锻造' },
+        { id: 77, name: '无终恨意', icon: '⚔️', type: 'ORNN', effect: '护甲+生命，破盾时造成护盾值伤害', formula: '奥恩锻造' },
+        { id: 78, name: '投机者', icon: '🎲', type: 'ORNN', effect: '攻速+暴击，适合攻速流和决斗棋子', formula: '奥恩锻造' },
+        { id: 79, name: '巫妖之祸', icon: '💀', type: 'ORNN', effect: '法强+法力，技能后首次普攻造成额外伤害', formula: '奥恩锻造' },
+        { id: 80, name: '飞升护符', icon: '🏜️', type: 'ORNN', effect: '双攻+生命，22秒后获得100%生命值和120%伤害', formula: '奥恩锻造' },
+        { id: 81, name: '禁忌雕像', icon: '🗿', type: 'ORNN', effect: '双抗+生命，50%护盾转换为生命值', formula: '奥恩锻造' },
+        { id: 82, name: '鱼骨头', icon: '🐟', type: 'ORNN', effect: '攻击力+攻速，攻击距离翻倍但随机攻击', formula: '奥恩锻造' },
+        { id: 83, name: '死亡之舞', icon: '💃', type: 'ORNN', effect: '攻击力+护甲，延迟承受伤害并回血', formula: '奥恩锻造' },
+        { id: 84, name: '连指手套', icon: '🧤', type: 'ORNN', effect: '攻击必定暴击或施法，适合混伤英雄', formula: '奥恩锻造' },
+        { id: 85, name: '烁刃', icon: '⚡', type: 'ORNN', effect: '攻速+法强，普攻和技能交替强化', formula: '奥恩锻造' },
+        { id: 86, name: '暗裔镰刀', icon: '😈', type: 'ORNN', effect: '攻击力+吸血，获得暗裔羁绊', formula: '奥恩锻造' },
+        { id: 87, name: '夜刃', icon: '🌙', type: 'ORNN', effect: '攻击力+暴击+吸血，暴击回血更多', formula: '奥恩锻造' },
+        { id: 88, name: '暗爪', icon: '🦅', type: 'ORNN', effect: '攻击力+攻速，攻击降低敌人护甲', formula: '奥恩锻造' },
+    ],
+    
+    // 阵容数据
+    lineups: [
+        {
+            id: 1,
+            name: '巨神峰龙王',
+            tier: 'S',
+            heroes: [22, 51, 42, 75, 68, 54, 78, 80, 94],
+            mainCarry: 94,
+            equipment: {
+                main: [5, 6, 7],
+                sub: [2, 17, 16]
+            },
+            traits: ['6巨神峰', '2神盾使', '1远古恐惧'],
+            description: '16.3版本T0阵容，龙王叠到500层锁死决赛圈',
+            winRate: '33.04%',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '经济类强化开局，连败连胜均可',
+                    heroes: ['佐伊', '厄斐琉斯', '蕾欧娜'],
+                    equipment: '优先合成龙王装备：纳什、法爆、青龙刀',
+                    tips: '用佐伊带装备打工过渡，有日女或小妮蔻优先玩这套'
+                },
+                mid: {
+                    level: '3-5至4-7',
+                    economy: '3-5拉7级，每回合D三下找宝石',
+                    heroes: ['两星蕾欧娜解锁皎月', '五张巨神峰解锁龙王'],
+                    equipment: '龙王解锁后拆佐伊装备给龙王',
+                    tips: '3-7前必须出宝石，龙王解锁是关键'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '5-1拉8级，6-1拉9级',
+                    heroes: ['两星皎月、塔里克、布隆、稻草人'],
+                    equipment: '给前排合成肉装，重伤减抗优先',
+                    tips: '5-4龙王达到7级星尘输出陡增，6-1找两星龙王大成'
+                }
+            }
+        },
+        {
+            id: 2,
+            name: '闭环金克丝',
+            tier: 'S',
+            heroes: [38, 49, 54, 68, 16, 17],
+            mainCarry: 38,
+            equipment: {
+                main: [2, 4, 3],
+                sub: [10, 11, 12]
+            },
+            traits: ['4护卫', '4枪手', '2练习生'],
+            description: '压制龙王的唯一T0阵容，运营难度低',
+            winRate: '30%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '连胜连败都可走，保证血量健康',
+                    heroes: ['金克丝', '猪妹', '布里茨'],
+                    equipment: '优先合成金克丝装备：羊刀、轻语、巨杀',
+                    tips: '有金克丝直接上，搭配祖安/护卫羁绊过渡'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '3-2拉6人口，3-5后上7级D牌',
+                    heroes: ['找齐金克丝、猪妹、布隆等关键棋子'],
+                    equipment: '金克丝必备羊刀+轻语，前排合成肉装',
+                    tips: '找两星金克丝，至少留20块钱，根据同行决定是否追三'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '5-1或5-2拉8人口',
+                    heroes: ['补齐所有羁绊棋子，可上五费卡'],
+                    equipment: '前排减疗减抗装备优先',
+                    tips: '两星金克丝配合五费卡上限也很高，站位注意防刺客'
+                }
+            }
+        },
+        {
+            id: 3,
+            name: '暗耀草皮',
+            tier: 'A',
+            heroes: [16, 17, 80, 87],
+            mainCarry: 16,
+            equipment: {
+                main: [2, 1, 16],
+                sub: [7, 6, 18]
+            },
+            traits: ['5暗影岛', '3启迪', '2神谕者'],
+            description: '16.3版本滑板鞋BUG修复+锤石加强后崛起',
+            winRate: '28%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '连胜连败均可，保证血量',
+                    heroes: ['寒冰', '发条'],
+                    equipment: '优先合成滑板鞋装备：羊刀、无尽',
+                    tips: '用暗影岛棋子过渡'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '3-2拉6人口，4-1拉7级',
+                    heroes: ['凑齐5暗影岛羁绊'],
+                    equipment: '锤石合成法术装：青龙刀、法爆',
+                    tips: '找两星滑板鞋和锤石'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '5-1拉8人口',
+                    heroes: ['补充千珏开启完美闭环'],
+                    equipment: '前排传统肉装',
+                    tips: '依赖16.3版本BUG修复，锤石伤害加强是核心'
+                }
+            }
+        },
+        {
+            id: 4,
+            name: '以绪巴德',
+            tier: 'A',
+            heroes: [17, 5],
+            mainCarry: 5,
+            equipment: {
+                main: [7, 8, 6],
+                sub: [6, 10, 11]
+            },
+            traits: ['5以绪塔尔', '2皮尔特沃夫', '2护卫'],
+            description: '6级猛D三星巴德，以绪小任务降低难度',
+            winRate: '27%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '保持每回合小D，稳血为主',
+                    heroes: ['奇亚娜', '发条'],
+                    equipment: '优先合成巴德装备：青龙刀、大天使、法爆',
+                    tips: '不刻意追求连胜或连败，优先保证经济'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '6级猛D，D出三星巴德',
+                    heroes: ['找齐以绪塔尔棋子'],
+                    equipment: '巴德三星后继续拉人口',
+                    tips: '2费卡居多，6级D牌是精髓'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '8人口成型阵容',
+                    heroes: ['补充发条、蔚等棋子'],
+                    equipment: '前排妮蔻：绿甲、板甲、心之钢',
+                    tips: '以绪小任务降低难度，发条解锁难度降低'
+                }
+            }
+        },
+        {
+            id: 5,
+            name: '虚空卡莎',
+            tier: 'A',
+            heroes: [59, 44, 24, 12, 71, 72, 3],
+            mainCarry: 59,
+            equipment: {
+                main: [17, 10, 11],
+                sub: [33, 34, 39]
+            },
+            traits: ['4虚空', '4主宰', '3祖安'],
+            description: '7级解锁卡莎，2虚空必给进攻型变异',
+            winRate: '27%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '正常过渡，连胜连败均可',
+                    heroes: ['蚂蚱、科加斯、雷克赛'],
+                    equipment: '优先合成卡莎装备：羊刀、无尽、巨杀',
+                    tips: '2虚空一定会给进攻型虚空装备，前期战力变强'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '7级解锁卡莎，不需要等8级',
+                    heroes: ['凑齐虚空+主宰羁绊'],
+                    equipment: '卡莎装备：羊刀、无尽、巨杀',
+                    tips: '7级解锁提前发力点，节奏更好'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '8人口成型，9人口补炸弹人',
+                    heroes: ['4虚空4主宰3祖安阵型'],
+                    equipment: '前排合成肉装',
+                    tips: '可上9补炸弹人，上10解锁大龙上限更高'
+                }
+            }
+        },
+        {
+            id: 6,
+            name: '诺克九五',
+            tier: 'A',
+            heroes: [86, 27, 14, 87, 52, 80, 66, 41, 36],
+            mainCarry: 36,
+            equipment: {
+                main: [10, 13, 12],
+                sub: [39, 36, 33]
+            },
+            traits: ['7诺克萨斯', '2主宰', '2迅击战士'],
+            description: '诺克萨斯体系，德莱文主C',
+            winRate: '26%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '正常过渡，保持血量',
+                    heroes: ['塞恩、贝蕾亚等诺克萨斯棋子'],
+                    equipment: '优先合成德莱文装备：无尽、饮血',
+                    tips: '前期用诺克萨斯棋子过渡'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '7级D牌找德莱文',
+                    heroes: ['德莱文、乐芙兰、斯维因'],
+                    equipment: '德莱文：无尽、饮血、正义/破甲',
+                    tips: '找两星德莱文，斯维因做主坦'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '8人口补齐7诺克萨斯',
+                    heroes: ['梅尔、千珏、安倍萨、稻草人'],
+                    equipment: '斯维因：狂徒、龙牙、反甲/石像鬼',
+                    tips: '7诺克萨斯召唤厄塔汗，强度随星级提升'
+                }
+            }
+        },
+        {
+            id: 7,
+            name: '闭环芸阿娜',
+            tier: 'A',
+            heroes: [67, 49, 68, 39, 16, 96, 62, 74],
+            mainCarry: 74,
+            equipment: {
+                main: [25, 24, 12],
+                sub: [34, 39, 33]
+            },
+            traits: ['3弗雷尔卓德', '3艾欧尼亚', '2斗士'],
+            description: '芸阿娜主C，配合瑞兹闭环',
+            winRate: '25%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '连胜连败均可',
+                    heroes: ['艾希、瑟庄妮等弗雷尔卓德'],
+                    equipment: '优先合成芸阿娜装备：法爆、帽子',
+                    tips: '利用弗雷尔卓德冰霜之塔过渡'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '7级D牌找两星芸阿娜',
+                    heroes: ['芸阿娜、孙悟空、塔里克'],
+                    equipment: '芸阿娜：法爆、帽子、正义/破甲',
+                    tips: '3弗雷尔卓德召唤冰封之塔'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '8人口补瑞兹开闭环',
+                    heroes: ['瑞兹、丽桑卓等高费卡'],
+                    equipment: '孙悟空：日炎、狂徒、反甲/石像鬼',
+                    tips: '瑞兹需要激活4个城邦羁绊解锁'
+                }
+            }
+        },
+        {
+            id: 8,
+            name: '斗士巴德',
+            tier: 'A',
+            heroes: [18, 27, 22, 6, 67, 26],
+            mainCarry: 18,
+            equipment: {
+                main: [29, 30, 25],
+                sub: [34, 39, 40]
+            },
+            traits: ['6斗士', '2以绪塔尔', '2神谕者'],
+            description: '6级猛D三星，塞恩叠血量',
+            winRate: '24%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '开局有塞恩+日炎可直接玩',
+                    heroes: ['塞恩、巴德、慎'],
+                    equipment: '塞恩必备日炎，巴德合成法术装',
+                    tips: '塞恩的日炎是必配的'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '6级抽塞恩、巴德、厄斐琉斯追3星',
+                    heroes: ['塞恩、巴德、厄斐琉斯三星'],
+                    equipment: '巴德：青龙刀、大天使、法爆',
+                    tips: '刷新类任务变得更容易，有D牌强化直接玩'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '8人口开6斗士',
+                    heroes: ['孙悟空、妮蔻等斗士'],
+                    equipment: '塞恩叠血量+血量装备',
+                    tips: '有举重比赛，3费以下斗士全追3星'
+                }
+            }
+        },
+        {
+            id: 9,
+            name: '永恩亚索',
+            tier: 'A',
+            heroes: [31, 73, 34, 26, 39, 67],
+            mainCarry: 31,
+            equipment: {
+                main: [10, 13, 17],
+                sub: [25, 24, 26]
+            },
+            traits: ['3艾欧尼亚', '2迅击战士', '2法师'],
+            description: '艾欧尼亚超凡路线，亚索主C',
+            winRate: '23%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '看艾欧效果，超凡最适配',
+                    heroes: ['亚索、慎、烬'],
+                    equipment: '亚索必备无尽，装备对可直接冲',
+                    tips: '开局要看艾欧效果，利刃、启迪不推荐'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '7级D牌找两星亚索永恩',
+                    heroes: ['亚索、永恩、阿狸'],
+                    equipment: '亚索：无尽+夜刃/暗裔镰',
+                    tips: '夜刃、暗裔镰改动后很适合亚索'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '8人口补齐阵容',
+                    heroes: ['凯南、孙悟空、妮蔻'],
+                    equipment: '永恩：法术装为主（AP伤害偏多）',
+                    tips: '有芸阿娜装备可替换狐狸、妮蔻'
+                }
+            }
+        },
+        {
+            id: 10,
+            name: '艾希蛮王',
+            tier: 'A',
+            heroes: [16, 28, 49, 26, 54, 1],
+            mainCarry: 28,
+            equipment: {
+                main: [13, 37, 17],
+                sub: [34, 39, 40]
+            },
+            traits: ['3弗雷尔卓德', '2护卫', '2狙神'],
+            description: '蛮王主C，艾希辅助控制',
+            winRate: '22%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '正常过渡',
+                    heroes: ['艾希、猪妹、妮蔻'],
+                    equipment: '给艾希1散件解锁蛮王',
+                    tips: '艾希、蛮王、猪妹三个加强'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '7级D牌追三星',
+                    heroes: ['猪妹、妮蔻、蛮王、艾希追3'],
+                    equipment: '蛮王：吸血+免控+攻速',
+                    tips: '蛮王必备吸血+免控+攻速'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '8人口补齐阵容',
+                    heroes: ['布隆、艾尼维亚等'],
+                    equipment: '蛮王适配神器：火炮、死舞、连指、烁刃',
+                    tips: '蛮王适配神器太多，火炮最强'
+                }
+            }
+        },
+        {
+            id: 11,
+            name: '暗影岛锤石',
+            tier: 'A',
+            heroes: [10, 37, 79, 87, 53, 32],
+            mainCarry: 79,
+            equipment: {
+                main: [29, 25, 27],
+                sub: [34, 39, 33]
+            },
+            traits: ['5暗影岛', '2主宰', '2迅击战士'],
+            description: '暗影岛灵魂体系，锤石主C',
+            winRate: '26%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '开局刷到破败之王可考虑',
+                    heroes: ['佛耶戈、约里克'],
+                    equipment: '佛耶戈带滑板鞋装备过渡',
+                    tips: '二星佛耶戈装备合适就可以考虑'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '7级D牌找格温',
+                    heroes: ['格温带锤石装备过渡'],
+                    equipment: '格温：青龙刀、法爆、鬼书',
+                    tips: '格温带锤石装备过渡'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '解锁锤石后成型',
+                    heroes: ['锤石、千珏、卑尔维斯'],
+                    equipment: '锤石：青龙刀、法爆、鬼书',
+                    tips: '解锁锤石需要暗影岛收集150个灵魂'
+                }
+            }
+        },
+        {
+            id: 12,
+            name: '皮城霸王龙',
+            tier: 'B',
+            heroes: [17, 30, 64, 86, 81],
+            mainCarry: 81,
+            equipment: {
+                main: [17, 10, 11],
+                sub: [34, 39, 33]
+            },
+            traits: ['4皮尔特沃夫', '2法师', '2斗士'],
+            description: '海克斯霸王龙主C，全数值加强',
+            winRate: '20%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '正常过渡',
+                    heroes: ['发条、蔚、凯特琳'],
+                    equipment: '优先合成霸王龙装备',
+                    tips: '皮城武器全面加强'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '7级D牌找皮城棋子',
+                    heroes: ['发条、蔚、萨勒芬妮'],
+                    equipment: '霸王龙：羊刀、无尽、巨杀',
+                    tips: '霸王龙全数值加强但未到巅峰'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '8人口解锁霸王龙',
+                    heroes: ['梅尔等高费卡'],
+                    equipment: '前排合成肉装',
+                    tips: '皮城总星级大于9解锁霸王龙'
+                }
+            }
+        },
+        {
+            id: 13,
+            name: '德玛西亚狙神',
+            tier: 'A',
+            heroes: [2, 13, 57, 60, 50, 85, 84],
+            mainCarry: 85,
+            equipment: {
+                main: [17, 10, 11],
+                sub: [33, 34, 39]
+            },
+            traits: ['5德玛西亚', '3狙神', '2枪手'],
+            description: '卢锡安&塞纳主C，德玛西亚体系',
+            winRate: '24%+',
+            stages: {
+                early: {
+                    level: '2-1至3-2',
+                    economy: '连胜连败均可',
+                    heroes: ['娑娜、嘉文四世、薇恩'],
+                    equipment: '优先合成卢锡安装备',
+                    tips: '德玛西亚获得护甲和魔抗'
+                },
+                mid: {
+                    level: '3-2至4-7',
+                    economy: '7级D牌找德玛棋子',
+                    heroes: ['盖伦、拉克丝、薇恩'],
+                    equipment: '卢锡安&塞纳：羊刀、无尽、巨杀',
+                    tips: '队伍损失25%血量触发重振旗鼓'
+                },
+                late: {
+                    level: '5-1至6-1',
+                    economy: '8人口补齐5德玛',
+                    heroes: ['加里奥等高费卡'],
+                    equipment: '前排：盖伦、洛里斯合成肉装',
+                    tips: '5德玛西亚护甲魔抗大幅提升'
+                }
+            }
+        }
+    ]
+};
